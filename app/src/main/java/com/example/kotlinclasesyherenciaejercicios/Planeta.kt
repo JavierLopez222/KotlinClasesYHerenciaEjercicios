@@ -43,7 +43,10 @@ fun main(){
 
     println(".................................................")
     println(".................................................")
-    println("Lista de planetas: ${sistemaSolar.planetas}")
+    println("Lista de planetas: ")
+    for(p in sistemaSolar.planetas){
+        println(p)
+    }
 
     val planetasM = sistemaSolar.planetas.filter { it.nombre.startsWith("M") }
     println(".................................................")

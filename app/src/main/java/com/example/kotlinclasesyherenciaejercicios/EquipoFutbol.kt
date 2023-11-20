@@ -12,10 +12,12 @@ class EquipoFutbol (val nombre: String, val pais: String) {
 
 class Liga(val equipos: MutableList<EquipoFutbol>){
 
+
 }
 
+
 fun main(){
-    val equipos = Liga(mutableListOf<EquipoFutbol>(
+    val liga = Liga(mutableListOf<EquipoFutbol>(
         EquipoFutbol("Real Madrid", "España"),
         EquipoFutbol("Barcelona","España"),
         EquipoFutbol("Betis","España"),
@@ -27,8 +29,17 @@ fun main(){
         EquipoFutbol("PSG","Francia"),
         EquipoFutbol("Chelsea", "Inglaterra"),
         EquipoFutbol("Roma","Italia"),
-        EquipoFutbol("Florentina", "Italia")
+        EquipoFutbol("Florentina", "Italia"),
+        EquipoFutbol("Bayer Leverkusen", "Alemania"),
+        EquipoFutbol("Borussia Dortmund", "Alemania"),
+        EquipoFutbol("VfL Bochum 1848", "Alemania"),
+        EquipoFutbol("Arsenal", "Inglaterra")
     ))
 
-    println("Todos los equipos: ${equipos.equipos}")
+    println("Todos los equipos: ")
+    for(equipo in liga.equipos){
+        println(equipo)
+    }
+
+
 }
