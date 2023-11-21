@@ -11,7 +11,13 @@ class EquipoFutbol (val nombre: String, val pais: String) {
 }
 
 class Liga(val equipos: MutableList<EquipoFutbol>){
+    fun championsLeague() {
+        val equiposSorteados = equipos.shuffled()
 
+        for (i in 0..7 step 2) {
+            println("Octavos de final - Equipo ${equiposSorteados[i].nombre} vs Equipo ${equiposSorteados[i + 1].nombre}")
+        }
+    }
 
 }
 
@@ -42,4 +48,7 @@ fun main(){
     }
 
 
+
 }
+
+
