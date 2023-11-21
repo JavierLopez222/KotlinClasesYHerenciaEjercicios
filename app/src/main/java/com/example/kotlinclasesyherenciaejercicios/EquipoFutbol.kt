@@ -47,6 +47,7 @@ fun main(){
         println(equipo)
     }
 
+    liga.championsLeague()
 
 
 }
