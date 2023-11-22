@@ -13,6 +13,27 @@ fun buscarJuegos(juegos: List<VideoJuego>, year: Int, plataforma: String): List<
     return juegos.filter { it.year == year && it.plataforma == plataforma }
 }
 
+fun buscarJuegosListas(
+    juegos: List<VideoJuego>,
+    year: List<Int>? = null,
+    plataforma: List<String>? = null
+): List<VideoJuego>{
+    var resultado = mutableListOf<VideoJuego>()
+
+    for (juego in juegos){
+        var enListaYear = year?.contains(juego.year) ?: true
+        var enListaPlataforma = plataforma?.contains(juego.plataforma) ?: true
+
+        if(enListaYear && enListaPlataforma){
+            resultado.add(juego)
+        }
+    }
+    return resultado
+}
+
+fun buscarJuegosMapa(juegos: List<VideoJuego>): Map<String, Int>{
+    return juegos.groupBy { it.plataforma }.mapValues { it.value.size }
+}
 fun main(){
 
     val juegos = listOf<VideoJuego>(
@@ -38,6 +59,10 @@ fun main(){
 
     println(juegoFiltrado)
     println(juegoFiltrado2)
+
+    var juegoFiltrado3 = buscarJuegosListas(juegos, listOf(2022, 2023), listOf("PC", "PS5"))
+
+    var juegoFiltrado5 = buscarJuegosMapa(juegos)
 }
 
 
