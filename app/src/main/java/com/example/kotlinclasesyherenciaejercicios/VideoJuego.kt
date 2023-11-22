@@ -53,6 +53,8 @@ fun main(){
         println(juego)
     }
 
+    println("...........................................................................")
+    println("...........................................................................")
 
     var juegoFiltrado = buscarJuegos(juegos, 2023, "PS5")
     var juegoFiltrado2 = buscarJuegos(juegos, 2022,"PC")
@@ -60,9 +62,14 @@ fun main(){
     println(juegoFiltrado)
     println(juegoFiltrado2)
 
-    var juegoFiltrado3 = buscarJuegosListas(juegos, listOf(2022, 2023), listOf("PC", "PS5"))
+    println("...........................................................................")
+    println("...........................................................................")
 
-    var juegoFiltrado5 = buscarJuegosMapa(juegos)
+    var juegoFiltrado3 = buscarJuegosListas(juegos, listOf(2022, 2023), listOf("PC", "PS5"))
+    println(juegoFiltrado3)
+
+    var juegoFiltrado4 = buscarJuegosMapa(juegos)
+    println(juegoFiltrado4)
 }
 
 
